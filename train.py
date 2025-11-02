@@ -39,10 +39,10 @@ def train_models():
     }
     
     # Create numerical roast column
-    df['roast_num'] = df['roast'].map(roast_mapping)
+    df['roast'] = df['roast'].map(roast_mapping)
     
     # Features for model 2
-    features = df[['100g_USD', 'roast_num']]
+    features = df[['100g_USD', 'roast']]
     
     # Train model 2
     # Use same target as model 1
