@@ -1,3 +1,6 @@
+'''
+Original train.py code has been commented out. Now testing functions from apputil.py
+
 import pandas as pd
 import pickle
 from sklearn.linear_model import LinearRegression
@@ -56,11 +59,28 @@ def train_models():
     saveModel.close()
     
     return model_1, model_2
+'''
+
+# Import functions from apputil
+from apputil import train_model_1, train_model_2
+
+def print_models():
+    "Running the models from apputil.py"
+    
+    # Test train_model_1
+    print("\nTraining Model 1 (Linear Regression)...")
+    model_1 = train_model_1()
+
+    # Test train_model_2
+    print("\nTraining Model 2 (Decision Tree Regressor)...")
+    model_2 = train_model_2()
+    
+    return model_1, model_2
 
 if __name__ == "__main__":
-    # Train and save both models
-    model_1, model_2 = train_models()
+    # Test the functions from apputil.py
+    model_1, model_2 = print_models()
     
-    print("Model 1 (Linear Regression) trained and saved as 'model_1.pickle'")
-    
-    print("\nModel 2 (Decision Tree Regressor) trained and saved as 'model_2.pickle'")
+    print("\nBoth models trained and tested successfully!")
+    print("Model 1 saved as 'model_1.pickle'")
+    print("Model 2 saved as 'model_2.pickle'")
